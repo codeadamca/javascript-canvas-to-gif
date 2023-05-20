@@ -1,6 +1,6 @@
 # Creating a GIF using JavaScript
 
-A basic example of creating and displaying a GIF using canvas content.
+A basic example of creating and displaying an animated GIF using canvas content.
 
 ***
 
