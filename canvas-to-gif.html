@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creatig a GIF using JavaScript</title>
+
+    
+
+</head>
+<body>
+
+    <script type="text/javascript" src="LZWEncoder.js"></script>
+    <script type="text/javascript" src="NeuQuant.js"></script>
+    <script type="text/javascript" src="GIFEncoder.js"></script>
+    <script type="text/javascript" src="b64.js"></script>
+
+    <canvas id="canvas1" width="100" height="100"></canvas>
+
+    <canvas id="canvas2" width="100" height="100"></canvas>
+
+    <canvas id="canvas3" width="100" height="100"></canvas>
+
+    <div id="container"></div>
+
+    <script>
+
+        const canvas1 = document.getElementById('canvas1');
+        const context1 = canvas1.getContext('2d');
+
+        context1.fillStyle = "red";
+        context1.fillRect(0, 0, 100, 100);
+
+        const canvas2 = document.getElementById('canvas2');
+        const context2 = canvas2.getContext('2d');
+
+        context2.fillStyle = "green";
+        context2.fillRect(0, 0, 100, 100);
+
+        const canvas3 = document.getElementById('canvas3');
+        const context3 = canvas3.getContext('2d');
+
+        context3.fillStyle = "blue";
+        context3.fillRect(0, 0, 100, 100);
+
+        let encoder = new GIFEncoder();
+        encoder.setRepeat(0);                
+        encoder.setDelay(500);
+        encoder.start();
+
+        encoder.addFrame(context1);
+        encoder.addFrame(context2);
+        encoder.addFrame(context3);
+
+        encoder.finish();
+
+        let binaryData = encoder.stream().getData();
+        let dataUrl = 'data:image/gif;base64,'+encode64(binaryData);
+
+        const image = document.createElement("img");
+
+        image.src = dataUrl;
+        document.getElementById('container').appendChild(image);
+
+    </script>
+
+</body>
+</html>
