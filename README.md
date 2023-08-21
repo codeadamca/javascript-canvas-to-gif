@@ -66,7 +66,7 @@ A basic example of creating and displaying an animated GIF using canvas content.
     document.getElementById('container').appendChild(image);
     ```
 
-The full working code is in the [`canvas-to-gif.html`](canvas-to-gif.html) file. 
+The full working code is in the `canvas-to-gif.html` file. 
 
 ***
 
