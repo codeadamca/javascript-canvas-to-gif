@@ -77,6 +77,7 @@ The full working code is in the `canvas-to-gif.html` file.
 * [gifencoder](https://github.com/eugeneware/gifencoder)
 * [base54.js](https://github.com/dankogai/js-base64)
 
+<br>
 <a href="https://codeadam.ca">
-<img src="https://codeadam.ca/images/code-block.png" width="100">
+<img src="https://cdn.codeadam.ca/images@1.0.0/codeadam-logo-coloured-horizontal.png" width="200">
 </a>
